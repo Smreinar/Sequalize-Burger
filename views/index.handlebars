@@ -6,8 +6,8 @@
                  <h3>Ready To Eat</h3>
                  {{#each burgers}}
                  {{!-- ref err --}}
-                 {{#unless this.devoured}}
-                 <li class="list-group-item list-group-item-success"><p>{{this.burger_name}}</p> <button class=" btn btn-primary devourdbtn" data-id={{this.id}}>Devoured</button></li>
+                 {{#unless devoured}}
+                 <li class="list-group-item list-group-item-success"><p>{{burger_name}}</p> <button class=" btn btn-primary devourdbtn" data-id={{id}}>Devoured</button></li>
                  {{/unless}}
                  {{/each}}
              </ul>
@@ -20,8 +20,8 @@
                  <h3>Devoured</h3>
                  {{!-- <li class="list-group-item list-group-item-danger">Devoured</li> --}}
                  {{#each burgers}}
-                    {{#if this.devoured}}
-                    <li class="list-group-item list-group-item-warning">{{this.id}}{{this.burger_name}}</li>
+                    {{#if devoured}}
+                    <li class="list-group-item list-group-item-warning">{{id}}{{burger_name}}<button class="btn btn-danger" id="trashbtn">Trash</button></li>
                     {{/if}}
                  {{/each}}
              </ul>

@@ -10,17 +10,17 @@ router.get("/", function(req, res) {
 
 router.get("/burger", function(req, res) {
     db.Burger.findAll().then( function(data) {
-        // console.log(data)
+        console.log(data)
         var hbsObject = {
             burgers: data
         };
-        // console.log(hbsObject);
+        console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
 router.post("/burger/create", function(req, res) {
-    // console.log(req.body.burger)
+    console.log(req.body.burger)
 db.Burger.create({
     burger_name: req.body.burger_name
     

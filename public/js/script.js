@@ -1,5 +1,6 @@
 $(document).ready(()=>{
-$("#addbtn").on("click",(event)=> {
+
+    $("#addbtn").on("click",(event)=> {
     
     var newBurger ={
         burger_name:$("#burger").val()
@@ -12,9 +13,13 @@ $("#addbtn").on("click",(event)=> {
     }).then(function(){
         location.reload();
     })
+
+
+
 });
 
 $(document).on("click", ".devourdbtn" , function(){
+   
     //Grabbing data-id from the generated buttons button
     var burger = $(this).data("id");
     

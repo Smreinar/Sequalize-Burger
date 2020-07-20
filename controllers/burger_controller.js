@@ -2,25 +2,29 @@ var express = require('express');
 var db = require('../models');
 var router = express.Router();
 
+var sequelizeConnect = db.sequelize;
+
+sequelizeConnect.sync();
+
 router.get("/", function(req, res) {
     res.redirect("/burger");
     
     
 });
 
+//Get
 router.get("/burger", function(req, res) {
-    db.Burger.findAll().then( function(data) {
+    db.Burger.findAll({}).then(function(data) {
+        var hbsObject = { burgers: data}
+
         console.log(data)
-        var hbsObject = {
-            burgers: data
-        };
-        console.log(hbsObject);
         res.render("index", hbsObject);
-    });
+    })
 });
 
+//Create
 router.post("/burger/create", function(req, res) {
-    console.log(req.body.burger)
+    
 db.Burger.create({
     burger_name: req.body.burger_name
     
@@ -29,7 +33,8 @@ db.Burger.create({
     });
 });
 
-router.post("/burger/eat/:id", function(req, res){
+//update
+router.put("/burger/eat/:id", function(req, res){
     db.Burger.update(
         {where: 
             {id:req.params.id}

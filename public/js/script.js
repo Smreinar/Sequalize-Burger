@@ -22,6 +22,7 @@ $(document).on("click", ".devourdbtn" , function(){
    
     //Grabbing data-id from the generated buttons button
     var burger = $(this).data("id");
+    console.log(burger)
     
     //Using ajax to apiRoute burger/eat/:id with a post method
     $.ajax({

@@ -34,13 +34,10 @@ db.Burger.create({
 });
 
 //update
-router.put("/burger/eat/:id", function(req, res){
+router.post("/burger/eat/:id", function(req, res){
     db.Burger.update(
-        {where: 
-            {id:req.params.id}
-        },{
-            devoured: true
-        }).then( function(){
+        { devoured: true },{ where: { id:req.params.id }})
+        .then( function(){
         res.redirect("/burger")
     })
 })

@@ -20,7 +20,7 @@ Then you will run the following command in terminal
 ---
 
 ## Technologies
-- HTML5
+- Bootstrap
 - CSS
 - jQuery 
 - node.js
@@ -33,6 +33,8 @@ Then you will run the following command in terminal
 
 
 ---
+
+## Code Snippets
 
 ## License
     MT

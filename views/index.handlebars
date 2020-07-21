@@ -21,7 +21,7 @@
                  {{!-- <li class="list-group-item list-group-item-danger">Devoured</li> --}}
                  {{#each burgers}}
                     {{#if dataValues.devoured}}
-                    <li class="list-group-item list-group-item-warning">{{dataValues.id}} {{dataValues.burger_name}}</li>
+                    <li class="list-group-item list-group-item-warning" data-id={{dataValues.id}}> {{dataValues.burger_name}}</li>
                     {{/if}}
                  {{/each}}
              </ul>

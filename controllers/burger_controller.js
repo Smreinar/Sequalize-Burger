@@ -42,4 +42,9 @@ router.post("/burger/eat/:id", function(req, res){
     })
 })
 
+//delete 
+router.delete("/burger/trash/:id", function(req, res){
+    
+})
+
 module.exports = router;
